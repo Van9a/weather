@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h4>Select city</h4>
+            <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" ng-model="city" placeholder="Enter city here...">-->
+            <!--</div>-->
+            <select class="form-control">
+                <md-button selected class="md-raised" ui-sref="forecast">Select city</md-button>
+                <option value="Bradford" ng-model="city">{{city}}</option>
+            </select>
+            <a ui-sref="forecast" class="btn btn-primary">Get Forecast</a> <br>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<h1 style="text-align: center; margin:0 0 25px 0;">{{ city }}</h1>
+<div class="container">
+    <ul class="pagination">
+        <li class="page-item" ng-repeat="page in paginationList" ng-click="showPage(page.link)" ng-class="{'active': currentPageNum() == page.link}"><a class="page-link" ng-bind-html="page.name"></a></li>
+    </ul>
+    <table id="example" class="table table-bordered table-hover" cellspacing="0">
+        <thead>
+        <tr>
+            <th ng-click="change('propertyName')">Year <div ng-class="getSortClass('year')"></div> </th>
+            <th ng-click="change('month')">Month<div ng-class="getSortClass('month')"></div></th>
+            <th ><button ng-click="change('tmax')">Tmax</button><div ng-class="getSortClass('tmax')"></div></th>
+            <th ng-click="change('tmin')">Tmin<div ng-class="getSortClass('tmin')"></div></th>
+            <th  ng-click="change('rain')">Rain mm <div ng-class="getSortClass('rain')"></div></th>
+            <th ng-click="change('sun')">Sun Hours <div ng-class="getSortClass('sun')"></div></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in products | orderBy: propertyName track by item.tmax">
+            <td>{{item.year}}</td>
+            <td>{{item.month}}</td>
+            <td>{{item.tmax}}</td>
+            <td>{{item.tmin}}</td>
+            <td>{{item.rain}}</td>
+            <td>{{item.hours}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <ul class="pagination">
+        <li class="page-item" ng-repeat="page in paginationList" ng-click="showPage(page.link)" ng-class="{'active': currentPageNum() == page.link}"><a class="page-link" ng-bind-html="page.name"></a></li>
+    </ul>
+</div>
+
+
